@@ -44,6 +44,7 @@ function startGame(){
         }else{
             changeScore(-10)
             document.getElementsByClassName('example')[0].innerHTML = 'You Lose!'
+            boundaries.forEach(elm=>elm.removeEventListener('mouseover', boundaryOver))
         }
     }
 
