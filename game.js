@@ -22,7 +22,7 @@ function startGame(){
 
     // Function called when start box clicked
     function startClick(){
-
+        boundaries.forEach(elm=>elm.classList.remove('youlose'))
     }
 
     // Function called when mouse over end box
