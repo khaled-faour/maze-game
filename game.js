@@ -2,6 +2,8 @@
 window.addEventListener('load', startGame);
 
 function startGame(){
+    let win = true;
+
     // Get boundary elements
     const boundaries = document.querySelectorAll('.boundary')
     
@@ -22,16 +24,21 @@ function startGame(){
 
     // Function called when start box clicked
     function startClick(){
+        win = true
         boundaries.forEach(elm=>elm.classList.remove('youlose'))
     }
 
     // Function called when mouse over end box
     function endOver(){
+        win === true ? 
+            document.getElementById('status').innerHTML += `<br> You Win!` :
+            document.getElementById('status').innerHTML += `<br> You Lose!`
 
     }
 
     // Function called when mouse over boundary
     function boundaryOver(){
+        win = false;
         boundaries.forEach(elm=>elm.classList.add('youlose'))
     }
 }
