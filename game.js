@@ -31,7 +31,7 @@ function startGame(){
         win = true
         document.getElementsByClassName('example')[0].innerHTML = ""
         boundaries.forEach(elm=>elm.classList.remove('youlose'))
-        
+
         // Add boundaries event listeners
         boundaries.forEach(elm=>elm.addEventListener('mouseover', boundaryOver))
     }
@@ -44,8 +44,9 @@ function startGame(){
         }else{
             changeScore(-10)
             document.getElementsByClassName('example')[0].innerHTML = 'You Lose!'
-            boundaries.forEach(elm=>elm.removeEventListener('mouseover', boundaryOver))
         }
+        boundaries.forEach(elm=>elm.removeEventListener('mouseover', boundaryOver))
+
     }
 
     // Function called when mouse over boundary
