@@ -3,6 +3,13 @@ window.addEventListener('load', startGame);
 
 function startGame(){
     let win = true;
+    let score = 0;
+
+    // Add Score Value to status element
+    document.getElementById("status").innerHTML = `
+        Begin by moving your mouse over the "S".
+        <br> Score: ${score}
+        `
 
     // Get boundary elements
     const boundaries = document.querySelectorAll('.boundary')
@@ -32,8 +39,10 @@ function startGame(){
     // Function called when mouse over end box
     function endOver(){
         if(win === true){
+            changeScore(5)
             document.getElementsByClassName('example')[0].innerHTML = 'You Win!'
         }else{
+            changeScore(-10)
             document.getElementsByClassName('example')[0].innerHTML = 'You Lose!'
         }
     }
@@ -42,5 +51,14 @@ function startGame(){
     function boundaryOver(){
         win = false;
         boundaries.forEach(elm=>elm.classList.add('youlose'))
+    }
+
+    // Function to change score value
+    function changeScore(value){
+        score += value;
+        document.getElementById("status").innerHTML = `
+        Begin by moving your mouse over the "S".
+        <br> Score: ${score}
+        `
     }
 }
