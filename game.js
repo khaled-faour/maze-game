@@ -1,5 +1,5 @@
 // Wait untill window is loaded, then start the game
-indow.addEventListener('load', startGame);
+window.addEventListener('load', startGame);
 
 function startGame(){
     // Get boundary elements
@@ -10,6 +10,9 @@ function startGame(){
     
     // Get end Boc
     const end = document.querySelector('#end')
+
+    // Add boundaries event listeners
+    boundaries.forEach(elm=>elm.addEventListener('mouseover', boundaryOver))
 
     // Start click event listener
     start.addEventListener('click', startClick)
@@ -24,6 +27,11 @@ function startGame(){
 
     // Function called when mouse over end box
     function endOver(){
+
+    }
+
+    // Function called when mouse over boundary
+    function boundaryOver(){
 
     }
 }
