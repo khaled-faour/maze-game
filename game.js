@@ -25,14 +25,15 @@ function startGame(){
     // Function called when start box clicked
     function startClick(){
         win = true
+        document.getElementsByClassName('example')[0].innerHTML = ""
         boundaries.forEach(elm=>elm.classList.remove('youlose'))
     }
 
     // Function called when mouse over end box
     function endOver(){
         win === true ? 
-            document.getElementById('status').innerHTML += `<br> You Win!` :
-            document.getElementById('status').innerHTML += `<br> You Lose!`
+            document.getElementsByClassName('example')[0].innerHTML = 'You Win!':
+            document.getElementsByClassName('example')[0].innerHTML = 'You Lose!'
 
     }
 
