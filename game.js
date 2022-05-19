@@ -46,8 +46,11 @@ function startGame(){
             changeScore(-10)
             document.getElementsByClassName('example')[0].innerHTML = 'You Lose!'
         }
-        boundaries.forEach(elm=>elm.removeEventListener('mouseover', boundaryOver))
 
+        // Remove boundaries event listeners
+        boundaries.forEach(elm=>elm.removeEventListener('mouseover', boundaryOver))
+        // Remove End mouseover event listener
+        end.removeEventListener('mouseover', endOver)
     }
 
     // Function called when mouse over boundary
