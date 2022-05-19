@@ -51,6 +51,7 @@ function startGame(){
     function boundaryOver(){
         win = false;
         boundaries.forEach(elm=>elm.classList.add('youlose'))
+        endOver()
     }
 
     // Function to change score value
