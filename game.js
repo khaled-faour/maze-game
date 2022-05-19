@@ -4,11 +4,13 @@ window.addEventListener('load', startGame);
 function startGame(){
     let win = true;
     let score = 0;
+    let highScore = localStorage.getItem('maze-highScore') || 0;
 
     // Add Score Value to status element
     document.getElementById("status").innerHTML = `
         Begin by moving your mouse over the "S".
         <br> Score: ${score}
+        <br> High Score: ${highScore}
         `
 
     // Get boundary elements
@@ -39,6 +41,7 @@ function startGame(){
 
     // Function called when mouse over end box
     function endOver(){
+
         if(win === true){
             changeScore(5)
             document.getElementsByClassName('example')[0].innerHTML = 'You Win!'
@@ -63,9 +66,14 @@ function startGame(){
     // Function to change score value
     function changeScore(value){
         score += value;
+        if(score > highScore){
+            localStorage.setItem('maze-highScore', score)
+            highScore = score    
+        }
         document.getElementById("status").innerHTML = `
         Begin by moving your mouse over the "S".
         <br> Score: ${score}
+        <br> High Score: ${highScore}
         `
     }
 }
