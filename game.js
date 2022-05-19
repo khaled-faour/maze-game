@@ -20,9 +20,6 @@ function startGame(){
     // Get end Boc
     const end = document.querySelector('#end')
 
-    // Add boundaries event listeners
-    boundaries.forEach(elm=>elm.addEventListener('mouseover', boundaryOver))
-
     // Start click event listener
     start.addEventListener('click', startClick)
 
@@ -34,6 +31,9 @@ function startGame(){
         win = true
         document.getElementsByClassName('example')[0].innerHTML = ""
         boundaries.forEach(elm=>elm.classList.remove('youlose'))
+        
+        // Add boundaries event listeners
+        boundaries.forEach(elm=>elm.addEventListener('mouseover', boundaryOver))
     }
 
     // Function called when mouse over end box
