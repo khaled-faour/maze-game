@@ -31,10 +31,11 @@ function startGame(){
 
     // Function called when mouse over end box
     function endOver(){
-        win === true ? 
-            document.getElementsByClassName('example')[0].innerHTML = 'You Win!':
+        if(win === true){
+            document.getElementsByClassName('example')[0].innerHTML = 'You Win!'
+        }else{
             document.getElementsByClassName('example')[0].innerHTML = 'You Lose!'
-
+        }
     }
 
     // Function called when mouse over boundary
