@@ -32,6 +32,6 @@ function startGame(){
 
     // Function called when mouse over boundary
     function boundaryOver(){
-
+        boundaries.forEach(elm=>elm.classList.add('youlose'))
     }
 }
