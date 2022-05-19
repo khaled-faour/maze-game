@@ -23,14 +23,15 @@ function startGame(){
     // Start click event listener
     start.addEventListener('click', startClick)
 
-    // End mouseover event listener
-    end.addEventListener('mouseover', endOver)
 
     // Function called when start box clicked
     function startClick(){
         win = true
         document.getElementsByClassName('example')[0].innerHTML = ""
         boundaries.forEach(elm=>elm.classList.remove('youlose'))
+
+        // End mouseover event listener
+        end.addEventListener('mouseover', endOver)
 
         // Add boundaries event listeners
         boundaries.forEach(elm=>elm.addEventListener('mouseover', boundaryOver))
