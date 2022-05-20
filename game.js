@@ -32,6 +32,9 @@ function startGame(){
         document.getElementsByClassName('example')[0].innerHTML = ""
         boundaries.forEach(elm=>elm.classList.remove('youlose'))
 
+        // Game div (out of the box) event listener
+        document.getElementById('game').addEventListener('mouseleave', boundaryOver)
+        
         // End mouseover event listener
         end.addEventListener('mouseover', endOver)
 
@@ -54,6 +57,9 @@ function startGame(){
         boundaries.forEach(elm=>elm.removeEventListener('mouseover', boundaryOver))
         // Remove End mouseover event listener
         end.removeEventListener('mouseover', endOver)
+        
+        // Remove ame div (out of the box) event listener
+        document.getElementById('game').removeEventListener('mouseleave', boundaryOver)
     }
 
     // Function called when mouse over boundary
