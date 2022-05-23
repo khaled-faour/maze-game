@@ -110,3 +110,11 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 	height: 150px;
 	width: 98px;
 }
+
+#timer{
+	width: 500px;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	padding-top: 20px;
+}
