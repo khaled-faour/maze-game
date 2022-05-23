@@ -23,7 +23,7 @@ function startGame(){
     const end = document.querySelector('#end')
 
     // Start click event listener
-    start.addEventListener('click', startClick)
+    start.addEventListener('mouseover', startClick)
 
 
     // Function called when start box clicked
